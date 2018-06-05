@@ -27,7 +27,7 @@ fs.readdir(path,function(err,files){//读文档目录，可以拿到第二个参
     var n = 0;
     files.forEach(function(file){//遍历文件
         n++;
-        if(file.replace('^.*\.(jpg|gif|png|bmp)$i')){//正则匹配
+        if(file.replace('^.*\.(jpg|gif|png|bmp)$i')){//正则匹配图片
             var oldfilePath = path+`\\${file}`;
             var newFilePath = path+'\\图片'+n+'.png';
             fs.rename(oldfilePath,newFilePath,function(error){//更改目录路径，其实就是直接改名
